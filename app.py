@@ -2,9 +2,10 @@ from flask import Flask, request, jsonify
 import subprocess
 import tempfile
 import os
-
+from flask_cors import CORS
 app = Flask(__name__)
 
+CORS(app)
 @app.route('/run', methods=['POST'])
 def run_code():
     data = request.get_json()
